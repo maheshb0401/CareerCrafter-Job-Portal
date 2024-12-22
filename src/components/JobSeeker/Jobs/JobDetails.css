@@ -1,0 +1,9 @@
+.JobDetails{
+    background-color: #fcfdfd;
+    box-shadow:  0 0 15px rgba(57, 112, 144, 0.2);
+    margin-left: 270px;
+    margin-right: 270px;
+    margin-top: 50px;
+    height: 400px;
+    padding: 30px;
+}

@@ -1,0 +1,13 @@
+.jobSeekerDashboard{
+    padding-top: 25px !important;
+    margin-left: 270px;
+    margin-right: 270px;
+}
+
+.companyBox{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* padding: 20px; */
+    justify-items: center;
+}
