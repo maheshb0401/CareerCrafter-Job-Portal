@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import api from "../../services/axiosConfig";
 import "./CompanyDetails.css";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import WysiwygIcon from '@mui/icons-material/Wysiwyg';
 
 const CompanyDetails = ()=>{
     const [companyDetails, setCompanyDetails] = useState([]);
@@ -73,7 +74,9 @@ const CompanyDetails = ()=>{
                         companyJobs.map( (job)=>(
                                 <Box className='employerDashboard' key={job.jobId} sx={{mt:'30px'}} > 
                                 <Box component={Link} to={`/jobDetails/${job.jobId}`} sx={{ textDecoration: 'none', color: 'inherit' }}>
-                                    <Typography variant="h4" sx={{ display: "flex", justifyItems: "left", fontSize: '20px' }}>{job.jobTitle}</Typography>
+                                  <Box sx={{display:'flex'}}>
+                                                              <WysiwygIcon color="primary" sx={{mr:'7px'}}></WysiwygIcon>
+                                    <Typography variant="h4" sx={{ display: "flex", justifyItems: "left", fontSize: '20px' }}>{job.jobTitle}</Typography> </Box>
                                     <Typography variant="body2" sx={{ display: "flex", justifyItems: "left", mt: '8px' }}> Skills : {job.requiredSkills}</Typography>
                                     <Typography variant="body2" sx={{ display: "flex", justifyItems: "left" }}>{job.employmentType}</Typography>
                                     <Typography variant="body2" sx={{ display: "flex", justifyItems: "left" }}>{job.company?.companyName}</Typography>

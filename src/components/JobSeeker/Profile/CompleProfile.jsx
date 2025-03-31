@@ -35,6 +35,7 @@ const CompleteProfile = () => {
 
       await api.post("/api/jobseeker/profile", payload);
       alert("Profile Completed Succesfully");
+      dispatch(fetchJobSeekerData(auth?.username));
 
     }catch(err){
       console.error("Error in Submitting" , err.response?.data || err.message);

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchJobSeekerData } from '../../../Store/jobSeekerSlice';
 import api from '../../../services/axiosConfig';
 import { Link } from 'react-router-dom';
+import WysiwygIcon from '@mui/icons-material/Wysiwyg';
 
 const AppliedJobs = () => {
   const [appData, setAppData] = useState([]);
@@ -68,7 +69,9 @@ const AppliedJobs = () => {
                           appData.map( (app)=>(
                             <Box className='employerDashboard' key={app.applicationId} sx={{mt:'30px'}} > 
                              <Box>
-                                <Typography variant="h4" sx={{ display: "flex", justifyItems: "left", fontSize: '20px' }}>{app.jobPosting?.jobTitle}</Typography>
+                                <Box sx={{display:'flex'}}>
+                                                            <WysiwygIcon color="primary" sx={{mr:'7px'}}></WysiwygIcon>
+                                <Typography variant="h4" sx={{ display: "flex", justifyItems: "left", fontSize: '20px' }}>{app.jobPosting?.jobTitle}</Typography> </Box>
                                 {/* <Typography variant="body2" sx={{ display: "flex", justifyItems: "left", mt: '8px' }}> Skills : {app.requiredSkills}</Typography> */}
                                 <Typography variant="body2" sx={{ display: "flex", justifyItems: "left", mt:'8px' }}>{app.jobPosting?.employmentType}</Typography>
                                 <Typography variant="body2" sx={{ display: "flex", justifyItems: "left" }}>{app.jobPosting?.company?.companyName}</Typography>

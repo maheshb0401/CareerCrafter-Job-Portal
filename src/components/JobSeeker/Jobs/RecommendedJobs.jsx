@@ -6,6 +6,7 @@ import AuthContext from '../../Auth/AuthContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchJobSeekerData } from '../../../Store/jobSeekerSlice';
 import { Link } from 'react-router-dom';
+import WysiwygIcon from '@mui/icons-material/Wysiwyg';
 
 const RecommendedJobs = () => {
     const [recommJobs, setRecommJobs] = useState([]);
@@ -64,7 +65,10 @@ const RecommendedJobs = () => {
                     recommJobs.map((job) => (
                         <Box className='employerDashboard' key={job.jobId} sx={{mt:'30px'}}>
                              <Box component={Link} to={`/jobDetails/${job.jobId}`} sx={{ textDecoration: 'none', color: 'inherit' }}>
-                             <Typography variant="h4" sx={{ display: "flex", justifyItems: "left", fontSize: '20px' }}>{job.jobTitle}</Typography>
+                             <Box sx={{display:'flex'}}>
+                              <WysiwygIcon color="primary" sx={{mr:'7px'}}></WysiwygIcon>
+                                <Typography variant="h4" sx={{ display: "flex", justifyItems: "left", fontSize: '20px' }}>{job.jobTitle}</Typography>
+                                </Box>
                              <Typography variant="body2" sx={{ display: "flex", justifyItems: "left", mt: '8px' }}> Skills : {job.requiredSkills}</Typography>
                              <Typography variant="body2" sx={{ display: "flex", justifyItems: "left" }}>{job.companyName}, {job.location}</Typography>
                              <Typography variant="body2" sx={{ display: "flex", justifyItems: "left" }}>{job.reason}</Typography>

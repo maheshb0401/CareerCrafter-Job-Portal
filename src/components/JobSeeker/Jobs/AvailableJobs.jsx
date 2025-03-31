@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import api from '../../../services/axiosConfig';
 import HeaderAfterLogin from '../../Layouts/HeaderAfterLogin';
 import { Link } from 'react-router-dom';
+import WysiwygIcon from '@mui/icons-material/Wysiwyg';
 
 const AvailableJobs = () => {
 
@@ -50,7 +51,10 @@ const AvailableJobs = () => {
                           jobs.map( (job)=>(
                             <Box className='employerDashboard' key={job.jobId} sx={{mt:'30px'}} > 
                              <Box component={Link} to={`/jobDetails/${job.jobId}`} sx={{ textDecoration: 'none', color: 'inherit' }}>
+                             <Box sx={{display:'flex'}}>
+                              <WysiwygIcon color="primary" sx={{mr:'7px'}}></WysiwygIcon>
                                 <Typography variant="h4" sx={{ display: "flex", justifyItems: "left", fontSize: '20px' }}>{job.jobTitle}</Typography>
+                                </Box>
                                 <Typography variant="body2" sx={{ display: "flex", justifyItems: "left", mt: '8px' }}> Skills : {job.requiredSkills}</Typography>
                                 <Typography variant="body2" sx={{ display: "flex", justifyItems: "left" }}>{job.employmentType}</Typography>
                                 <Typography variant="body2" sx={{ display: "flex", justifyItems: "left" }}>{job.company.companyName}</Typography>

@@ -165,6 +165,7 @@ const UpdateJobSeekerProfile = () => {
         try {
           const response = await api.put(`/api/jobseeker/${auth.username}/update-profile`, formData);
           alert("Profile updated successfully");
+          dispatch(fetchJobSeekerData(auth?.username));
         } catch (err) {
           console.error("Error in updating profile", err.response?.data || err.message);
         }

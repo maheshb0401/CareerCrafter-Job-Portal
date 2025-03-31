@@ -27,10 +27,9 @@ const Footer = () => (
               No. 1 Job Site for Professionals
             </Typography>
             <Box className="social-links">
-              {socialLinks.map(({ icon: Icon, label, url }) => (
+              {socialLinks.map(({ icon: Icon, label }) => (
                 <IconButton
                   key={label}
-                  href={url}
                   className="social-icon"
                   aria-label={label}
                   size="small"
